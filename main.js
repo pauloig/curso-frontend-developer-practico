@@ -4,7 +4,7 @@ const desktopMenu = document.querySelector('.desktop-menu');
 const menuHamIcon = document.querySelector('.menu');
 const menuCarritoIcon = document.querySelector('.navbar-shopping-cart');
 const mobileMenu = document.querySelector('.mobile-menu');
-const productDetail = document.querySelector('.product-detail')
+const shoppingCartContainer = document.querySelector('#shoppingCartContainer')
 const cardContainer = document.querySelector('.cards-container');
 
 emailMenu.addEventListener('click',mostrarMenu);
@@ -13,15 +13,16 @@ menuCarritoIcon.addEventListener('click',toggleProductDetail)
 
 function mostrarMenu(){
     desktopMenu.classList.toggle('inactive');
+    console.log('Email Manu');
 }
 
 function mostrarMenuMobile(){
 
     const ismobileMenuOpen = !mobileMenu.classList.contains('inactive');
-    const isProductDetailOpen = !productDetail.classList.contains('inactive');
+    const isProductDetailOpen = !shoppingCartContainer.classList.contains('inactive');
 
     if (isProductDetailOpen)
-        productDetail.classList.add('inactive');
+        shoppingCartContainer.classList.add('inactive');
 
 
     mobileMenu.classList.toggle('inactive');
@@ -30,13 +31,13 @@ function mostrarMenuMobile(){
 
 function toggleProductDetail(){
     const ismobileMenuOpen = !mobileMenu.classList.contains('inactive');
-    const isProductDetailOpen = !productDetail.classList.contains('inactive');
+    const isProductDetailOpen = !shoppingCartContainer.classList.contains('inactive');
 
     if (ismobileMenuOpen)
         mobileMenu.classList.add('inactive');
 
 
-    productDetail.classList.toggle('inactive');
+    shoppingCartContainer.classList.toggle('inactive');
 
 
 
